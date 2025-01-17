@@ -53,11 +53,17 @@ Kết quả thực tập sẽ được đánh giá dựa trên:
 
 ---
 
+## Đăng Ký Thực Tập
+
+Sinh viên quan tâm có thể đăng ký thực tập tại [liên kết này](https://example.com/dangkythuctap).
+
+---
+
 ## Thông Tin Về Công Ty TNHH DAKSystem
 
 - **Tên công ty:** Công Ty TNHH DAKSystem
 - **Địa chỉ:** 51 Nguyễn Trường Tộ, TP. BMT, Việt Nam
-- **Email:** [contact@daksystem.vn](mailto:contact@daksystem.net)
+- **Email:** [contact@daksystem.net](mailto:contact@daksystem.net)
 - **Số điện thoại:** 07-7228-7228
 - **Website:** [daksystem.net](https://daksystem.net)
 
