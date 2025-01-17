@@ -11,6 +11,42 @@
         .table-responsive {
             overflow-x: auto;
         }
+
+        /* Media query cho các màn hình nhỏ hơn (điện thoại) */
+        @media (max-width: 768px) {
+            table, th, td {
+                white-space: nowrap;
+            }
+
+            /* Sắp xếp lại bảng thành dạng column cho di động */
+            td {
+                display: block;
+                text-align: left;
+                padding: 8px 15px;
+            }
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            /* Đặt dòng bảng thành full width */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            /* Định dạng các cột trong mobile */
+            th {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+            }
+        }
     </style>
 </head>
 <body>
@@ -19,7 +55,7 @@
         <header class="text-center mb-4">
             <h1>Nhóm Thực Tập Trường Trung Cấp Tây Nguyên</h1>
             <p><strong>Đơn Vị Thực Tập:</strong> Công Ty TNHH Daksystem</p>
-     
+    
         </header>
 
         <h2 class="text-center">Danh Sách Nhóm Thực Tập Tại Trung Cấp Tây Nguyên</h2>
@@ -39,135 +75,138 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Nhóm 1 -->
                     <tr>
-                        <td><strong>Y Đan Niê (Trưởng nhóm)</strong></td>
-                        <td>823225080</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>8.5</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/a', '_blank')">Profile A</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/a', '_blank')">Dự Án A</button></td>
-                        <td>Nhóm 1</td>
+                        <td data-label="HỌ VÀ TÊN"><strong>Y Đan Niê (Trưởng nhóm)</strong></td>
+                        <td data-label="MÃ SỐ SINH VIÊN">823225080</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">8.5</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/a', '_blank')">Profile A</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/a', '_blank')">Dự Án A</button></td>
+                        <td data-label="Ghi Chú">Nhóm 1</td>
                     </tr>
                     <tr>
-                        <td>Y Duanh</td>
-                        <td>345029725</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.8</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/b', '_blank')">Profile B</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/b', '_blank')">Dự Án B</button></td>
-                        <td>Nhóm 1</td>
+                        <td data-label="HỌ VÀ TÊN">Y Duanh</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">345029725</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">7.8</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/b', '_blank')">Profile B</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/b', '_blank')">Dự Án B</button></td>
+                        <td data-label="Ghi Chú">Nhóm 1</td>
                     </tr>
                     <tr>
-                        <td>H Biệc</td>
-                        <td>358306723</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.2</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/c', '_blank')">Profile C</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/c', '_blank')">Dự Án C</button></td>
-                        <td>Nhóm 1</td>
+                        <td data-label="HỌ VÀ TÊN">H Biệc</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">358306723</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">7.2</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/c', '_blank')">Profile C</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/c', '_blank')">Dự Án C</button></td>
+                        <td data-label="Ghi Chú">Nhóm 1</td>
                     </tr>
                     <tr>
-                        <td>H Ly Sa</td>
-                        <td>359232907</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.5</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/d', '_blank')">Profile D</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/d', '_blank')">Dự Án D</button></td>
-                        <td>Nhóm 1</td>
+                        <td data-label="HỌ VÀ TÊN">H Ly Sa</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">359232907</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">7.5</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/d', '_blank')">Profile D</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/d', '_blank')">Dự Án D</button></td>
+                        <td data-label="Ghi Chú">Nhóm 1</td>
+                    </tr>
+                    <!-- Nhóm 2 -->
+                    <tr>
+                        <td data-label="HỌ VÀ TÊN"><strong>Lê Hoài Anh (Trưởng nhóm)</strong></td>
+                        <td data-label="MÃ SỐ SINH VIÊN">847062007</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">8.3</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/e', '_blank')">Profile E</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/e', '_blank')">Dự Án E</button></td>
+                        <td data-label="Ghi Chú">Nhóm 2</td>
                     </tr>
                     <tr>
-                        <td><strong>Lê Hoài Anh (Trưởng nhóm)</strong></td>
-                        <td>847062007</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>8.0</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/e', '_blank')">Profile E</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/e', '_blank')">Dự Án E</button></td>
-                        <td>Nhóm 2</td>
+                        <td data-label="HỌ VÀ TÊN">Phún Thanh Kỳ</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">325269530</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">7.4</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/f', '_blank')">Profile F</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/f', '_blank')">Dự Án F</button></td>
+                        <td data-label="Ghi Chú">Nhóm 2</td>
                     </tr>
                     <tr>
-                        <td>Phún Thanh Kỳ</td>
-                        <td>325269530</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.3</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/f', '_blank')">Profile F</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/f', '_blank')">Dự Án F</button></td>
-                        <td>Nhóm 2</td>
+                        <td data-label="HỌ VÀ TÊN">Nguyễn Quang Vinh</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">862031812</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">8.0</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/g', '_blank')">Profile G</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/g', '_blank')">Dự Án G</button></td>
+                        <td data-label="Ghi Chú">Nhóm 2</td>
                     </tr>
                     <tr>
-                        <td>Nguyễn Quang Vinh</td>
-                        <td>862031812</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.8</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/g', '_blank')">Profile G</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/g', '_blank')">Dự Án G</button></td>
-                        <td>Nhóm 2</td>
+                        <td data-label="HỌ VÀ TÊN">Lưu Nguyễn Thiên Kim</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">941110076</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">7.6</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/h', '_blank')">Profile H</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/h', '_blank')">Dự Án H</button></td>
+                        <td data-label="Ghi Chú">Nhóm 2</td>
+                    </tr>
+                    <!-- Nhóm 3 -->
+                    <tr>
+                        <td data-label="HỌ VÀ TÊN"><strong>Nguyễn Đức Huy (Trưởng nhóm)</strong></td>
+                        <td data-label="MÃ SỐ SINH VIÊN">342181718</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">8.2</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/i', '_blank')">Profile I</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/i', '_blank')">Dự Án I</button></td>
+                        <td data-label="Ghi Chú">Nhóm 3</td>
                     </tr>
                     <tr>
-                        <td>Lưu Nguyễn Thiên Kim</td>
-                        <td>941110076</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>8.1</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/h', '_blank')">Profile H</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/h', '_blank')">Dự Án H</button></td>
-                        <td>Nhóm 2</td>
+                        <td data-label="HỌ VÀ TÊN">Lê Quế Trân</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">342304427</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">7.9</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/j', '_blank')">Profile J</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/j', '_blank')">Dự Án J</button></td>
+                        <td data-label="Ghi Chú">Nhóm 3</td>
                     </tr>
                     <tr>
-                        <td><strong>Nguyễn Đức Huy (Trưởng nhóm)</strong></td>
-                        <td>342181718</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>8.4</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/i', '_blank')">Profile I</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/i', '_blank')">Dự Án I</button></td>
-                        <td>Nhóm 3</td>
+                        <td data-label="HỌ VÀ TÊN">Lê Thị Ý Nhi</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">357709023</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">7.3</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/k', '_blank')">Profile K</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/k', '_blank')">Dự Án K</button></td>
+                        <td data-label="Ghi Chú">Nhóm 3</td>
                     </tr>
                     <tr>
-                        <td>Lê Quế Trân</td>
-                        <td>342304427</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.9</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/j', '_blank')">Profile J</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/j', '_blank')">Dự Án J</button></td>
-                        <td>Nhóm 3</td>
+                        <td data-label="HỌ VÀ TÊN">Nguyễn Thanh Hùng</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">943383608</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">8.0</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/l', '_blank')">Profile L</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/l', '_blank')">Dự Án L</button></td>
+                        <td data-label="Ghi Chú">Nhóm 3</td>
                     </tr>
                     <tr>
-                        <td>Lê Thị Ý Nhi</td>
-                        <td>357709023</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>8.0</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/k', '_blank')">Profile K</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/k', '_blank')">Dự Án K</button></td>
-                        <td>Nhóm 3</td>
-                    </tr>
-                    <tr>
-                        <td>Nguyễn Thanh Hùng</td>
-                        <td>943383608</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.7</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/l', '_blank')">Profile L</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/l', '_blank')">Dự Án L</button></td>
-                        <td>Nhóm 3</td>
-                    </tr>
-                    <tr>
-                        <td>Phạm Minh Hải</td>
-                        <td>368782934</td>
-                        <td>EdeCaffe</td>
-                        <td>Đang làm</td>
-                        <td>7.5</td>
-                        <td><button class="btn btn-info" onclick="window.open('https://profile.example.com/m', '_blank')">Profile M</button></td>
-                        <td><button class="btn btn-primary" onclick="window.open('https://project.example.com/m', '_blank')">Dự Án M</button></td>
-                        <td>Nhóm 3</td>
+                        <td data-label="HỌ VÀ TÊN">Phạm Minh Hải</td>
+                        <td data-label="MÃ SỐ SINH VIÊN">368782934</td>
+                        <td data-label="Dự Án">EdeCaffe</td>
+                        <td data-label="Tiến Độ">Đang làm</td>
+                        <td data-label="Điểm">8.4</td>
+                        <td data-label="Link Profile"><button class="btn btn-info" onclick="window.open('https://profile.example.com/m', '_blank')">Profile M</button></td>
+                        <td data-label="Link Dự Án"><button class="btn btn-primary" onclick="window.open('https://project.example.com/m', '_blank')">Dự Án M</button></td>
+                        <td data-label="Ghi Chú">Nhóm 3</td>
                     </tr>
                 </tbody>
             </table>
