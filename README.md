@@ -62,7 +62,7 @@ Khóa thực tập tại công ty TNHH DAKSystem nhằm tạo cơ hội cho sinh
 ## Thông Tin Về Công Ty TNHH DAKSystem
 - **Tên công ty:** Công Ty TNHH DAKSystem
 - **Địa chỉ:** 51 Nguyễn Trường Tộ, TP. BMT, Việt Nam
-- **Email:** contact@daksystem.vn
+- **Email:** contact@daksystem.net
 - **Số điện thoại:** 0943-943-179
 
 ### Mạng Xã Hội
